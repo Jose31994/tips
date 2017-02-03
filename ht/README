@@ -1,0 +1,68 @@
+
+HTprotector
+===========
+
+Author:        Manuel Hoppe (m.hoppe@hyperspeed.de)
+Contributions: Lutz "ilLUTZminator" (enhanced features)
+               Gerard Bronner (french translation)
+               Hanns Proenen (hanns@data-defenders.de, enhanced features)
+Copyright:     GPL, see http://www.fsf.org/licenses/licenses.html#GPL
+Description:   Protects simply your web directories with a web based
+               front end. Highly configureable.
+
+Required server settings
+------------------------
+Apache: Set "AllowOverride AuthConfig" directive for target directory
+        (see also http://httpd.apache.org/docs/howto/htaccess.html)
+PHP:    Write access to target directory.
+-> ask your webspace provider for details!
+
+Install
+-------
+Simply put htprotector.php to the target directory.
+See other examples below under "Examples"
+
+Customization
+-------------
+Please note the defines in htprotector.php. You can edit them to change the
+appearance of various texts (eg. translate it to another language).
+But please be honest to yourself: if you have no clue at all what
+"defines", "strings", etc are: don't change anything. You may break
+this script.
+
+Support
+-------
+If you need any support, contact me (see eMail above). Any bug hints,
+contributions ans suggestions are welcome.
+I'm also offering commercial support, so don't hesitate if you require
+special conditions and versions.
+
+Examples
+--------
+HTprotector is designed to work out of the box, without any configuration
+or knowlege of the techniques.
+If you need to, it can be your authentication swiss army knife. See those
+examples just as _some_ examples. It's not covering all the features
+available.
+Example 1: Playground
+Let's assume you're a web designer and your home web server is also
+accessible via Internet. New layouts for your customer web site are
+located in a special web folder, which is protected by HTprotector.
+The World should need a password, you don't.
+So replace the HTACCESS_CONTENT define with the following line:
+define ( "HTACCESS_CONTENT", "AuthName \"".HTTITLE."\"\nAllow from 192.168.1.0/255.255.255.0\nAuthType Basic\nAuthUserFile ".HTPASSWD."\nRequire valid-user\n" );
+Then the access from your local subnet 192.168.1.0 is granted to
+access the folder without any password and all other need to
+authenticate.
+Example 2: Integrate in existing pages
+You don't want just fit the layout to your web pages- you want to integrate
+it seamless into your application. Perfect, use the HTP_HTML_INTRO and
+HTP_HTML_EXTRO defines! Point these to files which contain the layout and
+only the essential contents are displayed. Or include HTprotector from your
+scripts and point the defines to empty files, than you have the full control
+on your layout.
+
+Links
+-----
+- http://httpd.apache.org/docs/2.0/howto/htaccess.html
+- http://httpd.apache.org/docs/2.0/howto/auth.html

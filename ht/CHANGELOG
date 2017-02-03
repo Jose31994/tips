@@ -1,0 +1,28 @@
+
+Changes Version 1.5
+===================
+- Fixed typos in translation (#3201769, thanks to CharlieM)
+- Script is now strict
+- Error handling, if directory or file is not writable
+- CSS stylesheet is now shipped with the package
+
+
+Changes Version 1.4
+===================
+
+Thanks a lot to Hanns Proenen (hanns@data-defenders.de), who suggested
+most of those new features!
+
+- new HTP_HTML_INTRO and HTP_HTML_EXTRO to customize the apperance even
+  more or to integrate is into existing applications
+- new HTP_PASSWORD_LEGTH: define default password length
+- new HTP_NO_USER_ACCESS: only HT_ADMIN user are allowed to log in
+- changed HTP_ADMIN: al users may log in, but if set, only these users can
+  add, modify oder delete other users.
+- fixed HTACCESS_CONTENT: wasn't corrected populated with the language
+  string and wrong encoded
+- fixed eMail encoding: contents are no longer encoded with HTML entities
+- fixed DE translation: corrected typo
+- new HTP_PREDEFINED_PASSWORD: don't use randomly generated passwords, but
+  predefined ones from the language strings
+
